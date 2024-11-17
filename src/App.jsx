@@ -50,7 +50,7 @@ function App() {
 
   return (
     <main className="container">
-      <h1>Tauri App Mark1</h1>
+      <h1>Tauri Timer MARK - 1</h1>
       <div className="container">
         {
           !active &&
