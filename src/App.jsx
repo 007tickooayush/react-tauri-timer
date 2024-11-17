@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
+import { toggleFullScreen } from "./utils/utils";
 
 const defaultTime = 3;
 const leastTime = 0;
@@ -9,10 +10,13 @@ function App() {
   const [active, setActive] = useState(false);
   const [time, setTime] = useState(defaultTime);
 
-  // useEffect(() => {
-  //   setActive(false);
-  //   setTime(defaultTime);
-  // }, []);
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "F11") {
+        toggleFullScreen();
+      }
+    });
+  }, []);
 
   useEffect(() => {
     let timer;
